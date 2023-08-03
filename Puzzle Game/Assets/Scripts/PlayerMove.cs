@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private float horizontal;
-    private float vertical = 16f;
-    private float speed = 8f;
+    public float horizontal;
+    public float vertical = 20f;
+    public float speed = 20f;
     private bool FacingRight = true;
     Animator animator;
     [SerializeField] Rigidbody2D rb2d;
@@ -32,6 +32,7 @@ public class PlayerMove : MonoBehaviour
         }
         Flip();
         PlayerMoveAnimation();
+        PlayerJumpAnimation();
     }
     private void FixedUpdate()
     {
@@ -54,7 +55,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void PlayerMoveAnimation()
     {
-        if (horizontal != 0)
+        if (horizontal != 0 )
         {
             animator.SetBool("isWalking", true);
         }
@@ -62,14 +63,23 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
+
+    }
+    public void PlayerJumpAnimation()
+    {
+        
         if (IsGrounded())
         {
             animator.SetBool("isJumped", false);
         }
         else
         {
-            animator.CrossFade("Astronaut_Jump", 0.1f);
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Astronaut_Jump"))
+            {
+                animator.CrossFade("Astronaut_Jump", 0f);
+            }
             animator.SetBool("isJumped", true);
         }
+
     }
 }
