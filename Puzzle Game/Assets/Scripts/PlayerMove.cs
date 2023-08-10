@@ -55,7 +55,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void PlayerMoveAnimation()
     {
-        if (horizontal != 0 )
+        if (horizontal != 0)
         {
             animator.SetBool("isWalking", true);
         }
@@ -67,7 +67,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void PlayerJumpAnimation()
     {
-        
+
         if (IsGrounded())
         {
             animator.SetBool("isJumped", false);
