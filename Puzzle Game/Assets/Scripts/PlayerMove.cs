@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public Transform arm;
     public float horizontal;
     public float vertical = 20f;
     public float speed = 20f;
@@ -30,6 +31,7 @@ public class PlayerMove : MonoBehaviour
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
             animator.SetBool("isJumped", true);
         }
+        AimArm();
         Flip();
         PlayerMoveAnimation();
         PlayerJumpAnimation();
@@ -47,6 +49,17 @@ public class PlayerMove : MonoBehaviour
             localscale.x *= -1f;
             transform.localScale = localscale;
         }
+    }
+    private void AimArm()
+    {
+        Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(arm.transform.position);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        if (!FacingRight)
+        {
+            angle += 180f; 
+        }
+        arm.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     private bool IsGrounded()
