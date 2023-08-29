@@ -20,17 +20,7 @@ public class PlayerMove : MonoBehaviour
     }
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, vertical);
-        }
-        if (Input.GetKeyUp(KeyCode.W) && rb2d.velocity.y > 0f)
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
-            animator.SetBool("isJumped", true);
-        }
+        PlayerJump();
         AimArm();
         Flip();
         PlayerMoveAnimation();
@@ -94,5 +84,19 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("isJumped", true);
         }
 
+    }
+    public void PlayerJump()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, vertical);
+        }
+        if (Input.GetKeyUp(KeyCode.W) && rb2d.velocity.y > 0f)
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
+            animator.SetBool("isJumped", true);
+        }
     }
 }
