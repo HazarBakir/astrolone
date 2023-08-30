@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float horizontal;
     public float vertical = 20f;
     public float speed = 20f;
-    private bool FacingRight = true;
+    public bool FacingRight = true;
     Animator animator;
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField] Transform groundCheck;
@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
     }
-    private void Flip()
+    public void Flip()
     {
         if (FacingRight && horizontal < 0f || !FacingRight && horizontal > 0f)
         {
