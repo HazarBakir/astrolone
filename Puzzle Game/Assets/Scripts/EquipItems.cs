@@ -8,13 +8,9 @@ public class EquipItems : MonoBehaviour
     public GameObject handLight;
     public GameObject pistol;
     public GameObject assault_rifle;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public bool hasAssaultRifle;
+    public bool hasPistol;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         HandLightActivation();
@@ -38,27 +34,35 @@ public class EquipItems : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (pistol.activeInHierarchy)
+            if (hasPistol == true)
             {
-                pistol.SetActive(false);
+                if (pistol.activeInHierarchy)
+                {
+                    pistol.SetActive(false);
+                }
+                else
+                {
+                    assault_rifle.SetActive(false);
+                    pistol.SetActive(true);
+                }
             }
-            else
-            {
-                assault_rifle.SetActive(false);
-                pistol.SetActive(true);
-            }
+            
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (assault_rifle.activeInHierarchy)
+            if (hasAssaultRifle == true)
             {
-                assault_rifle.SetActive(false);
+                if (assault_rifle.activeInHierarchy)
+                {
+                    assault_rifle.SetActive(false);
+                }
+                else
+                {
+                    assault_rifle.SetActive(true);
+                    pistol.SetActive(false);
+                }
             }
-            else
-            {
-                assault_rifle.SetActive(true);
-                pistol.SetActive(false);
-            }
+            
         }
     }
 }
