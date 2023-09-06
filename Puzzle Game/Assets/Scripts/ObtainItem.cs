@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class ObtainItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject obtainableObject;
+    public GameObject obtainGameObject;
+    private bool inTriggerZone = false;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (inTriggerZone && Input.GetKeyDown(KeyCode.E))
+        {
+            obtainGameObject.SetActive(true);
+            Destroy(obtainableObject);
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
-            {
-            }
+            inTriggerZone = true;
         }
-        else if (collision.gameObject.CompareTag("Obtainable"))
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            
+            inTriggerZone = false;
         }
     }
 }

@@ -22,47 +22,61 @@ public class EquipItems : MonoBehaviour
         {
             if (handLight.activeInHierarchy)
             {
-                handLight.SetActive(false);
+                DeactiveTheObject(handLight);
             }
             else
             {
-                handLight.SetActive(true);
+                ActiveTheObject(handLight);
             }
         }
     }
     void EquipGuns()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (pistol.activeInHierarchy)
         {
-            if (hasPistol == true)
-            {
-                if (pistol.activeInHierarchy)
-                {
-                    pistol.SetActive(false);
-                }
-                else
-                {
-                    assault_rifle.SetActive(false);
-                    pistol.SetActive(true);
-                }
-            }
-            
+            hasPistol = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && hasPistol == true)
         {
-            if (hasAssaultRifle == true)
+            if (pistol.activeInHierarchy)
             {
-                if (assault_rifle.activeInHierarchy)
-                {
-                    assault_rifle.SetActive(false);
-                }
-                else
-                {
-                    assault_rifle.SetActive(true);
-                    pistol.SetActive(false);
-                }
+                DeactiveTheObject(pistol);
             }
-            
+            else
+            {
+                DeactiveTheObject(assault_rifle);
+                ActiveTheObject(pistol);
+            }
+
+
         }
+
+        if (assault_rifle.activeInHierarchy)
+        {
+            hasAssaultRifle = true;            
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && hasAssaultRifle == true)
+        {
+            if (assault_rifle.activeInHierarchy)
+            {
+                DeactiveTheObject(assault_rifle);
+            }
+            else
+            {
+                ActiveTheObject(assault_rifle);
+                DeactiveTheObject(pistol);
+            }
+        }
+
+
+
+    }
+    void ActiveTheObject(GameObject obj)
+    {
+        obj.SetActive(true);
+    }
+    void DeactiveTheObject(GameObject obj)
+    {
+        obj.SetActive(false);
     }
 }
