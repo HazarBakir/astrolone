@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ObtainItem : MonoBehaviour
 {
-    public GameObject obtainableObject;
-    public GameObject obtainGameObject;
+    public GameObject obtainableObject; // for to destroy the object after taking the object.
+    public GameObject obtainGameObject; // for to activate the object after taking the object.
     private bool inTriggerZone = false;
 
     void Update()

@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ObjectInteractions : MonoBehaviour
+public class ObjectInteractionMessages : MonoBehaviour
 {
     public TMP_Text interactionText;
     public TMP_Text takeItemsText;
