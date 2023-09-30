@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public Transform arm;
-    public float horizontal;
-    public float vertical = 20f;
-    public float speed = 20f;
+    public Transform Arm;
+    public float Horizontal;
+    public float VerticalSpeed = 20f;
+    public float Speed = 20f;
     public bool FacingRight = true;
-    Animator animator;
-    [SerializeField] Rigidbody2D rb2d;
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundlayer;
+    Animator _animator;
+    [SerializeField] Rigidbody2D _rb2d;
+    [SerializeField] Transform _groundCheck;
+    [SerializeField] LayerMask _groundlayer;
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -28,75 +28,65 @@ public class PlayerMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
+        _rb2d.velocity = new Vector2(Horizontal * Speed, _rb2d.velocity.y);
     }
     public void Flip()
     {
-        if (FacingRight && horizontal < 0f || !FacingRight && horizontal > 0f)
-        {
-            FacingRight = !FacingRight;
-            Vector3 localscale = transform.localScale;
-            localscale.x *= -1f;
-            transform.localScale = localscale;
-        }
+        if ((!FacingRight || !(Horizontal < 0f)) && (FacingRight || !(Horizontal > 0f))) return;
+        FacingRight = !FacingRight;
+        var localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
     private void AimArm()
     {
-        Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(arm.transform.position);
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(Arm.transform.position);
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         if (!FacingRight)
         {
             angle += 180f; 
         }
-        arm.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Arm.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
+        return Physics2D.OverlapCircle(_groundCheck.position, 0.2f, _groundlayer);
     }
     public void PlayerMoveAnimation()
     {
-        if (horizontal != 0)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
-        }
-
+        _animator.SetBool("isWalking", Horizontal != 0);
     }
     public void PlayerJumpAnimation()
     {
 
         if (IsGrounded())
         {
-            animator.SetBool("isJumped", false);
+            _animator.SetBool("isJumped", false);
         }
         else
         {
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Astronaut_Jump"))
+            if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("Astronaut_Jump"))
             {
-                animator.CrossFade("Astronaut_Jump", 0f);
+                _animator.CrossFade("Astronaut_Jump", 0f);
             }
-            animator.SetBool("isJumped", true);
+            _animator.SetBool("isJumped", true);
         }
 
     }
     public void PlayerJump()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        Horizontal = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, vertical);
+            _rb2d.velocity = new Vector2(_rb2d.velocity.x, VerticalSpeed);
         }
-        if (Input.GetKeyUp(KeyCode.W) && rb2d.velocity.y > 0f)
+        if (Input.GetKeyUp(KeyCode.W) && _rb2d.velocity.y > 0f)
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
-            animator.SetBool("isJumped", true);
+            _rb2d.velocity = new Vector2(_rb2d.velocity.x, _rb2d.velocity.y * 0.5f);
+            _animator.SetBool("isJumped", true);
         }
     }
 }

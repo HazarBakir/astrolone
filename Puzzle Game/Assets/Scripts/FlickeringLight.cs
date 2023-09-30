@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class FlickeringLight : MonoBehaviour
 {
-    public Light2D _Light;
+    public Light2D Light;
     public float MinTime;
     public float MaxTime;
     public float Timer;
@@ -22,18 +22,16 @@ public class FlickeringLight : MonoBehaviour
         FlickerLight();
     }
 
-    void FlickerLight()
+    private void FlickerLight()
     {
         if (Timer > 0)
         {
             Timer -= Time.deltaTime;
         }
 
-        if (Timer < 0)
-        {
-            _Light.enabled = !_Light.enabled;
-            Timer = Random.Range(MinTime, MaxTime);
-        }
+        if (!(Timer < 0)) return;
+        Light.enabled = !Light.enabled;
+        Timer = Random.Range(MinTime, MaxTime);
     }
 
 }

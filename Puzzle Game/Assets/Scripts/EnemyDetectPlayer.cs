@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyDetectPlayer : MonoBehaviour
 {
-    private Transform target; // The player will be our target.
+    private Transform _target; // The player will be our target.
 
-    public float moveSpeed = 5.0f; // Enemy's speed.
+    public float MoveSpeed = 5.0f; // Enemy's speed.
 
     private void Update()
     {
-        if (target != null)
+        if (_target != null)
         {
             ChasePlayer();
         }
@@ -18,11 +18,11 @@ public class EnemyDetectPlayer : MonoBehaviour
 
     private void ChasePlayer()
     {
-        Vector3 moveDirection = (target.position - transform.position).normalized;
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        var moveDirection = (_target.position - transform.position).normalized;
+        transform.position += MoveSpeed * Time.deltaTime * moveDirection;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (IsPlayer(other))
         {
@@ -30,7 +30,7 @@ public class EnemyDetectPlayer : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (IsPlayer(other))
         {
@@ -38,18 +38,18 @@ public class EnemyDetectPlayer : MonoBehaviour
         }
     }
 
-    private bool IsPlayer(Collider other)
+    private bool IsPlayer(Collider2D other)
     {
         return other.CompareTag("Player");
     }
 
     private void SetTarget(Transform newTarget)
     {
-        target = newTarget;
+        _target = newTarget;
     }
 
     private void LoseTarget()
     {
-        target = null;
+        _target = null;
     }
 }

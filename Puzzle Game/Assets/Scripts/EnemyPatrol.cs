@@ -6,16 +6,16 @@ public class EnemyPatrol : MonoBehaviour
 {
     public GameObject PointA;
     public GameObject PointB;
-    Rigidbody2D rBody;
+    private Rigidbody2D _rBody;
     public float Speed;
     void Start()
     {
-        rBody = GetComponent<Rigidbody2D>();
+        _rBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        rBody.velocity = new Vector2(Speed, rBody.velocity.y);
+        _rBody.velocity = new Vector2(Speed, _rBody.velocity.y);
        
     }
     private void OnTriggerEnter2D(Collider2D collision)
