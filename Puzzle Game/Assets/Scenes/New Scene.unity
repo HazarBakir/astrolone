@@ -301,8 +301,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839295281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5216503, y: 1.2447584, z: 10.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.5217, y: 1.2448, z: 10.1}
+  m_LocalScale: {x: 1.1445793, y: 1.1445793, z: 1.1445793}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f373bfcd3dab3459059c5dd0e26d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 1
 --- !u!212 &845295071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -533,17 +534,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524674911}
-  m_LocalRotation: {x: 0.4637651, y: -0, z: -0, w: 0.88595825}
-  m_LocalPosition: {x: 0, y: 0, z: -7.19}
+  m_LocalRotation: {x: 0.45241475, y: -0, z: -0, w: 0.8918076}
+  m_LocalPosition: {x: 0, y: 0, z: -18.66}
   m_LocalScale: {x: 0.024660468, y: 0.024660468, z: 0.024660468}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958853671}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 55.261, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 53.797, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -959.95, y: -542.3698}
+  m_AnchoredPosition: {x: -960.54, y: -551.58}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524674913
@@ -566,7 +567,50 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Asya is the leader of an exploration mission that begins among the stars
+    in the depths of space. She and her team are sent to gather more information
+    about an unknown star system. However, during a routine observation mission,
+    the spacecraft is suddenly jolted by a collision and is pulled into a dark storm.
+    The inside of the ship is in chaos, with alarm sounds echoing, and Asya takes
+    one last look before being hurled into space.
+
+
+
+    
+
+    In the infinite
+    emptiness of space, all communication is completely lost, and Asya is left alone
+    in a damaged spacecraft. The collision inside the ship has caused significant
+    damage, and communication devices are also malfunctioning. Finding herself in
+    the midst of loneliness and silence, determination replaces despair.
+
+
+
+    
+
+    Instead
+    of accepting that the spacecraft is irreparable, Asya takes action to achieve
+    the impossible. First and foremost, she must continue to produce oxygen by utilizing
+    all available resources to survive.
+
+
+
+    
+
+    Additionally, she must find
+    the necessary components to repair the spacecraft and reestablish communication.
+    However, this mission will not be easy. The damage inside the ship, along with
+    unusual monster-like sounds and mysterious signals, complicates matters further.
+
+    
+
+
+
+    Relying
+    on her inner strength and training, Asya strives to solve the mysteries of space
+    while simultaneously struggling to reestablish communication and rescue her lost
+    team. This journey presents a story that tests the limits of loneliness, despair,
+    and determination.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -593,8 +637,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -629,7 +673,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -34.738075, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -655,6 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f373bfcd3dab3459059c5dd0e26d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 0.5
 --- !u!50 &1524674916
 Rigidbody2D:
   serializedVersion: 4
