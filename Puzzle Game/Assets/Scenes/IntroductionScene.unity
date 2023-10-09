@@ -519,7 +519,6 @@ GameObject:
   - component: {fileID: 1524674914}
   - component: {fileID: 1524674913}
   - component: {fileID: 1524674915}
-  - component: {fileID: 1524674916}
   m_Layer: 5
   m_Name: NEW
   m_TagString: Untagged
@@ -535,8 +534,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524674911}
   m_LocalRotation: {x: 0.45241475, y: -0, z: -0, w: 0.8918076}
-  m_LocalPosition: {x: 0, y: 0, z: -18.66}
-  m_LocalScale: {x: 0.024660468, y: 0.024660468, z: 0.024660468}
+  m_LocalPosition: {x: 0, y: 0, z: -9.16}
+  m_LocalScale: {x: 0.0137620205, y: 0.0137620205, z: 0.0137620205}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958853671}
@@ -544,7 +543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 53.797, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960.54, y: -551.58}
+  m_AnchoredPosition: {x: -960.21, y: -542}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524674913
@@ -567,50 +566,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Asya is the leader of an exploration mission that begins among the stars
-    in the depths of space. She and her team are sent to gather more information
-    about an unknown star system. However, during a routine observation mission,
-    the spacecraft is suddenly jolted by a collision and is pulled into a dark storm.
-    The inside of the ship is in chaos, with alarm sounds echoing, and Asya takes
-    one last look before being hurled into space.
-
-
+  m_text: 'Asya had embarked on a journey into deep space with her team as a brave
+    space researcher to explore a dead star system. However, a sudden collision had
+    damaged their spacecraft, causing Asya to faint.
 
     
 
-    In the infinite
-    emptiness of space, all communication is completely lost, and Asya is left alone
-    in a damaged spacecraft. The collision inside the ship has caused significant
-    damage, and communication devices are also malfunctioning. Finding herself in
-    the midst of loneliness and silence, determination replaces despair.
-
-
+    When she woke up,
+    chaos reigned inside the ship with darkened systems, distress calls, and eerie
+    creature sounds. Unsure but determined, Asya took urgent survival measures and
+    decided to repair the ship and reestablish communication.
 
     
 
-    Instead
-    of accepting that the spacecraft is irreparable, Asya takes action to achieve
-    the impossible. First and foremost, she must continue to produce oxygen by utilizing
-    all available resources to survive.
-
-
-
-    
-
-    Additionally, she must find
-    the necessary components to repair the spacecraft and reestablish communication.
-    However, this mission will not be easy. The damage inside the ship, along with
-    unusual monster-like sounds and mysterious signals, complicates matters further.
-
-    
-
-
-
-    Relying
-    on her inner strength and training, Asya strives to solve the mysteries of space
-    while simultaneously struggling to reestablish communication and rescue her lost
-    team. This journey presents a story that tests the limits of loneliness, despair,
-    and determination.'
+    Repairing
+    the ship and restoring communication proved challenging due to damage, strange
+    sounds, and mysterious signals. In this journey where despair and determination
+    coexisted, Asya discovered her inner strength.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -637,18 +609,18 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_wordSpacing: 12
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -699,28 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f373bfcd3dab3459059c5dd0e26d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.5
---- !u!50 &1524674916
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524674911}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  Speed: 0.2
 --- !u!1 &1527474971
 GameObject:
   m_ObjectHideFlags: 0
