@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Obtainable
   - PatrolPoint
+  - IntroText
   layers:
   - Default
   - TransparentFX

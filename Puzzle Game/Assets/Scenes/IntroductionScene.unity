@@ -912,6 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
+  CountdownDuration: 15
 --- !u!212 &845295071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1676,8 +1677,8 @@ GameObject:
   - component: {fileID: 1524674913}
   - component: {fileID: 1524674915}
   m_Layer: 5
-  m_Name: NEW
-  m_TagString: Untagged
+  m_Name: IntroductionText
+  m_TagString: IntroText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1828,6 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.15
+  CountdownDuration: 5
 --- !u!1 &1527474971
 GameObject:
   m_ObjectHideFlags: 0
