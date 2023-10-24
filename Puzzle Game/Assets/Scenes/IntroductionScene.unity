@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.15
-  CountdownDuration: 5
+  CountdownDuration: 35
 --- !u!1 &1527474971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1841,7 @@ GameObject:
   - component: {fileID: 1527474973}
   - component: {fileID: 1527474972}
   m_Layer: 0
-  m_Name: a
+  m_Name: GlobalVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 15e37566cc597da4b85caba487bd9798, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 3c0164c69214cad4dbea6af6fe240ed6, type: 2}
 --- !u!4 &1527474973
 Transform:
   m_ObjectHideFlags: 0
