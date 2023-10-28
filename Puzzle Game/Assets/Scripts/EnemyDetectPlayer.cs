@@ -1,32 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDetectPlayer : MonoBehaviour
 {
-    private Transform _target; // The player will be our target.
+    public Component ChasePlayerComponent;
+    public Component EnemyPatrolComponent;
 
-    public float MoveSpeed = 5.0f; // Enemy's speed.
-
-    private void Update()
+    void Start()
     {
-        if (_target != null)
-        {
-            ChasePlayer();
-        }
-    }
-
-    private void ChasePlayer()
-    {
-        var moveDirection = (_target.position - transform.position).normalized;
-        transform.position += MoveSpeed * Time.deltaTime * moveDirection;
+        ChasePlayerComponent = GetComponent<Component>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (IsPlayer(other))
         {
-            SetTarget(other.transform);
         }
     }
 
@@ -34,7 +24,6 @@ public class EnemyDetectPlayer : MonoBehaviour
     {
         if (IsPlayer(other))
         {
-            LoseTarget();
         }
     }
 
@@ -43,13 +32,8 @@ public class EnemyDetectPlayer : MonoBehaviour
         return other.CompareTag("Player");
     }
 
-    private void SetTarget(Transform newTarget)
-    {
-        _target = newTarget;
-    }
 
-    private void LoseTarget()
-    {
-        _target = null;
-    }
+
+
+    
 }

@@ -8,6 +8,8 @@ public class EnemyPatrol : MonoBehaviour
     public GameObject PointB;
     private Rigidbody2D _rBody;
     public float Speed;
+    public Component ChasePlayerComponent;
+    public Component EnemyPatrolComponent;
     void Start()
     {
         _rBody = GetComponent<Rigidbody2D>();
@@ -24,7 +26,6 @@ public class EnemyPatrol : MonoBehaviour
         {
             Speed = -Speed;
             
-
         }
     }
 }
