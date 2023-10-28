@@ -1,19 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    PlayerMove player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject GameStopMenu;
+    private bool _isGamePaused = false;
 
-    // Update is called once per frame
-    void Update()
+
+  
+    private void Update()
     {
-        
+        StopTheGame();
+    }
+    void StopTheGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_isGamePaused)
+            {
+                _isGamePaused = false;
+                GameStopMenu.SetActive(false);
+
+            }
+            else
+            {
+                _isGamePaused = true;
+                GameStopMenu.SetActive(true);
+            }
+
+        }
     }
 }
