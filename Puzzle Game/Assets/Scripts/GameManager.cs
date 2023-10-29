@@ -14,22 +14,20 @@ public class GameManager : MonoBehaviour
     {
         StopTheGame();
     }
-    void StopTheGame()
+
+    private void StopTheGame()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        if (!Input.GetKeyDown(KeyCode.P) && !Input.GetKeyDown(KeyCode.Escape)) return;
+        if (_isGamePaused)
         {
-            if (_isGamePaused)
-            {
-                _isGamePaused = false;
-                GameStopMenu.SetActive(false);
+            _isGamePaused = false;
+            GameStopMenu.SetActive(false);
 
-            }
-            else
-            {
-                _isGamePaused = true;
-                GameStopMenu.SetActive(true);
-            }
-
+        }
+        else
+        {
+            _isGamePaused = true;
+            GameStopMenu.SetActive(true);
         }
     }
 }

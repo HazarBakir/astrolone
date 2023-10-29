@@ -5,18 +5,19 @@ using UnityEngine;
 public class ChasePlayer : MonoBehaviour
 {
     public Transform Target;
-    public float EnemySpeed = 10.0f;
+    private Enemy _enemy;
 
     private void Start()
     {
         FindPlayer();
+        _enemy = FindObjectOfType<Enemy>();
     }
 
     private void Update()
     {
         if (Target != null)
         { 
-            transform.position = Vector3.MoveTowards(transform.position, Target.position, EnemySpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, Target.position, _enemy.Speed * Time.deltaTime);
         }
         else
         {

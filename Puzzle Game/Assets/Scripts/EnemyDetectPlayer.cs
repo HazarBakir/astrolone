@@ -5,26 +5,24 @@ using UnityEngine;
 
 public class EnemyDetectPlayer : MonoBehaviour
 {
-    public Component ChasePlayerComponent;
-    public Component EnemyPatrolComponent;
+    public ChasePlayer ChasePlayerComponent;
+   // public EnemyPatrol EnemyPatrolComponent;
 
     void Start()
     {
-        ChasePlayerComponent = GetComponent<Component>();
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (IsPlayer(other))
-        {
-        }
+        if (!IsPlayer(other)) return;
+        ChasePlayerComponent.enabled = true;
+       // EnemyPatrolComponent.enabled = false;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (IsPlayer(other))
-        {
-        }
+        if (!IsPlayer(other)) return;
+        ChasePlayerComponent.enabled = false;
+        //EnemyPatrolComponent.enabled = true;
     }
 
     private bool IsPlayer(Collider2D other)
