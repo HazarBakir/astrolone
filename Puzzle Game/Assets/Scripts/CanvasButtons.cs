@@ -13,7 +13,6 @@ public class CanvasButtons : MonoBehaviour
         PanelGameObject.SetActive(true);
         GameStoryText.SetActive(true);
         MessageAnimationAnimator.SetBool("ClickedPlayButton", true);
-        Debug.Log("hi");
     }
 
 }
