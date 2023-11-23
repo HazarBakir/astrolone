@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CanvasButtons : MonoBehaviour
@@ -8,6 +9,11 @@ public class CanvasButtons : MonoBehaviour
     public GameObject GameStoryText;
     public Animator MessageAnimationAnimator;
 
+    void Update()
+    {
+           
+    }
+
     public void ActivatePanel()
     {
         PanelGameObject.SetActive(true);
@@ -15,4 +21,8 @@ public class CanvasButtons : MonoBehaviour
         MessageAnimationAnimator.SetBool("ClickedPlayButton", true);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

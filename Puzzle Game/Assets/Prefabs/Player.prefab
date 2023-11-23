@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a3094e1aec2234da838976b2fda053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire_point: {fileID: 4376814245151813373}
-  bullet_prefab: {fileID: 7577800767880930921, guid: b6d9ac23657dfe444b073416817edebf, type: 3}
+  FirePoint: {fileID: 4376814245151813373}
+  BulletPrefab: {fileID: 7577800767880930921, guid: b6d9ac23657dfe444b073416817edebf, type: 3}
+  AmmoCapacity: 30
 --- !u!1 &852460827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1071,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 105aa9c6afd3a244aa52917395ad39d4, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1134,16 +1135,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f34ed574fac49c45a83204e02ee27a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arm: {fileID: 869327116}
-  horizontal: 0
-  vertical: 25
-  speed: 20
+  Arm: {fileID: 869327116}
+  Horizontal: 0
+  VerticalSpeed: 25
+  Speed: 23
   FacingRight: 1
-  rb2d: {fileID: 5491491595616665958}
-  groundCheck: {fileID: 5491491596214866805}
-  groundlayer:
+  _rb2d: {fileID: 5491491595616665958}
+  _groundCheck: {fileID: 5491491596214866805}
+  _groundlayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
 --- !u!114 &5491491595616665964
 MonoBehaviour:
   m_ObjectHideFlags: 0

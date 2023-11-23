@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8291752552989598705}
   - component: {fileID: 8291752552989598706}
   - component: {fileID: 8291752552989598707}
-  - component: {fileID: 8291752552989598708}
   - component: {fileID: 8291752552989598719}
-  m_Layer: 0
+  - component: {fileID: 862784509}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 8291752552989598709}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 105aa9c6afd3a244aa52917395ad39d4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 300
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8291752552989598708
+--- !u!114 &8291752552989598719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,13 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8291752552989598709}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8821b20b24b55e140a2e118be92add21, type: 3}
+  m_Script: {fileID: 11500000, guid: eb3a72c6e1721b544a4de85d8bff79cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointA: {fileID: 0}
-  PointB: {fileID: 0}
-  Speed: 15
---- !u!114 &8291752552989598719
+  Target: {fileID: 0}
+--- !u!114 &862784509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,8 +157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8291752552989598709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3a72c6e1721b544a4de85d8bff79cf, type: 3}
+  m_Script: {fileID: 11500000, guid: ea5cf14ed7e03d44da96695254f64b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  EnemySpeed: 15
+  Speed: 15
